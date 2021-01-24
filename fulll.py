@@ -5,7 +5,7 @@ import smtplib
 import threading
 from playsound import playsound
 
-
+#mengirim surel
 def send_mail_function():
 
     recipientEmail = "adityadewatap@gmail.com"
@@ -21,12 +21,13 @@ def send_mail_function():
         server.close()
     except Exception as e:
     	print(e)
-
+        
+#display        
 dispW=640
 dispH=480
 flip=2
-camSet='nvarguscamerasrc !  video/x-raw(memory:NVMM), width=3264, height=2464, format=NV12, framerate=21/1 ! nvvidconv flip-method='+str(flip)+' ! video/x-raw, width='+str(dispW)+', height='+str(dispH)+', format=BGRx ! videoconvert ! video/x-raw, format=BGR ! appsink'
-cap=cv2.VideoCapture(camSet)
+detectCam='nvarguscamerasrc !  video/x-raw(memory:NVMM), width=3264, height=2464, format=NV12, framerate=21/1 ! nvvidconv flip-method='+str(flip)+' ! video/x-raw, width='+str(dispW)+', height='+str(dispH)+', format=BGRx ! videoconvert ! video/x-raw, format=BGR ! appsink'
+cap=cv2.VideoCapture(detectCam)
 
 fire_cascade = cv2.CascadeClassifier('/home/skripsi/Desktop/pyPro/firedetectsound/fire_detection.xml')
 
