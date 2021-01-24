@@ -15,7 +15,7 @@ def send_mail_function():
         server = smtplib.SMTP('smtp.gmail.com', 587)
         server.ehlo()
         server.starttls()
-        server.login("mer4h.apel@gmail.com", 'Kanaka250697')
+        server.login("mer4h.apel@gmail.com", 'your pass')
         server.sendmail('mer4h.apel@gmail.com', recipientEmail, "Ada Api!!")
         print("sent to {}".format(recipientEmail))
         server.close()
